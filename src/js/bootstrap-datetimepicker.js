@@ -884,8 +884,8 @@ THE SOFTWARE.
                 picker.element.on({
                     'click': $.proxy(picker.show, this),
                     'focus': $.proxy(picker.show, this),
-                    'change': $.proxy(change, this),
-                    'blur': $.proxy(picker.hide, this)
+                    'change': $.proxy(change, this)
+                    //'blur': $.proxy(picker.hide, this)
                 });
             } else {
                 picker.element.on({
@@ -903,10 +903,10 @@ THE SOFTWARE.
         attachDatePickerGlobalEvents = function () {
             $(window).on(
                 'resize.datetimepicker' + picker.id, $.proxy(place, this));
-            if (!picker.isInput) {
+            //if (!picker.isInput) {
                 $(document).on(
                     'mousedown.datetimepicker' + picker.id, $.proxy(picker.hide, this));
-            }
+            //}
         },
 
         detachDatePickerEvents = function () {
